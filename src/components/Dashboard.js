@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import { CarService } from '../service/CarService';
 import { Panel } from 'primereact/panel';
-import { Button } from 'primereact/button';
-import { Dropdown } from 'primereact/dropdown';
-import { InputText } from 'primereact/inputtext';
 import { FullCalendar } from 'primereact/fullcalendar';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import { InputTextarea } from 'primereact/inputtextarea';
-import { Messages } from 'primereact/messages';
 
 export class Dashboard extends Component {
 
