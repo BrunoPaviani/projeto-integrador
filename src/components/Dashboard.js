@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { CarService } from '../service/CarService';
 import { Panel } from 'primereact/panel';
-import { Button } from 'primereact/button';
-import { Dropdown } from 'primereact/dropdown';
-import { InputText } from 'primereact/inputtext';
 import { FullCalendar } from 'primereact/fullcalendar';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import { InputTextarea } from 'primereact/inputtextarea';
 
 export class Dashboard extends Component {
 
@@ -44,78 +40,52 @@ export class Dashboard extends Component {
             ],
             fullcalendarOptions: {
                 plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
-                defaultDate: '2017-02-01',
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
+                    right: 'month,agendaWeek,agendaDay',
                 },
-                editable: true
+                editable: true,
+                locale: 'br-BR'
             },
             events: [
                 {
                     "id": 1,
-                    "title": "Dia de evento",
-                    "start": "2017-02-01"
+                    "title": "Prova SOA",
+                    "start": "2019-10-10"
                 },
                 {
                     "id": 2,
-                    "title": "Prova de sistemas distribuidos",
-                    "start": "2017-02-07"
+                    "title": "Iniciar Projeto POO1",
+                    "start": "2019-10-01",
+                    "end": "2019-10-03"
                 },
                 {
-                    "id": 3,
-                    "title": "Pagamento boleto",
-                    "start": "2017-02-09T16:00:00"
+                    "id": 2,
+                    "title": "Entrega Trabalho BD1",
+                    "start": "2019-10-07",
+                    "end": "2017-10-10"
                 },
                 {
-                    "id": 4,
-                    "title": "Mensagem enviada para o coordenador Nader",
-                    "start": "2017-02-16T16:00:00"
+                    "id": 2,
+                    "title": "Atualizar cadastro",
+                    "start": "2019-10-14",
                 },
                 {
-                    "id": 5,
-                    "title": "Carnaval",
-                    "start": "2017-02-11",
-                    "end": "2017-02-13"
-                },
-                {
-                    "id": 6,
-                    "title": "Provas",
-                    "start": "2017-02-12T10:30:00",
-                    "end": "2017-02-12T12:30:00"
-                },
-                {
-                    "id": 7,
-                    "title": "Trabalho geografia",
-                    "start": "2017-02-12T12:00:00"
-                },
-                {
-                    "id": 8,
-                    "title": "Loucuras",
-                    "start": "2017-02-12T14:30:00"
+                    "id": 2,
+                    "title": "Avaliação Institucional",
+                    "start": "2019-10-23",
                 },
                 {
                     "id": 9,
-                    "title": "Prova Pedro",
-                    "start": "2017-02-12T17:30:00"
-                },
-                {
-                    "id": 10,
-                    "title": "Ser feliz",
-                    "start": "2017-02-12T20:00:00"
-                },
-                {
-                    "id": 11,
-                    "title": "Aniversário Pietra",
-                    "start": "2017-02-13T07:00:00"
+                    "title": "Revisar TCC",
+                    "start": "2019-10-12T14:30:00"
                 },
                 {
                     "id": 12,
-                    "title": "Google",
-                    "url": "http://google.com/",
-                    "start": "2017-02-28"
-                }
+                    "title": "Reunião Projeto",
+                    "start": "2019-10-29"
+                },
             ]
         };
 
@@ -155,8 +125,8 @@ export class Dashboard extends Component {
                 <div className="p-col-12 p-lg-4">
                     <div className="card summary">
                         <span className="title">Turma</span>
-                        <span className="detail">Turma</span>
-                        <span className="count visitors">INF018</span>
+                        <span className="detail">Sistemas de informação</span>
+                        <span className="count visitors">INF043</span>
                     </div>
                 </div>
                 <div className="p-col-12 p-lg-4">
@@ -169,7 +139,7 @@ export class Dashboard extends Component {
                 <div className="p-col-12 p-lg-4">
                     <div className="card summary">
                         <span className="title">Mesalidade</span>
-                        <span className="detail">Data de Vencimento: 10/12/2019</span>
+                        <span className="detail">Data de vencimento - 25/11/2019</span>
                         <span className="count revenue">R$830</span>
                     </div>
                 </div>
@@ -250,60 +220,6 @@ export class Dashboard extends Component {
                         </ul>
                     </Panel>
         </div>*/}
-                <div className="p-col-12 p-md-6 p-lg-6 p-fluid contact-form">
-                    <Panel header="Mensagem">
-                        <div className="p-grid">
-                            <div className="p-col-12">
-                                <Dropdown value={this.state.city} options={this.state.cities} placeholder="Selecione o contato" onChange={this.onCityChange} autoWidth={false} />
-                            </div>
-                            <div className="p-col-12">
-                                <InputText type="text" placeholder="Titulo da mensagem." />
-                            </div>
-                            <div className="p-col-12">
-                                <InputTextarea rows={4} cols={30} placeholder="Digite aqui." autoResize={true} />
-                            </div>
-                            <div className="p-col-12">
-                                
-                                <Button onClick={this.showSuccess} type="button" label="Enviar" icon="fa-send" />
-                            </div>
-                        </div>
-                    </Panel>
-                </div>
-
-                <div className="p-col-12 p-lg-6 contacts">
-                    <Panel header="Contatos">
-                        <ul>
-                            <li>
-                                <button className="p-link">
-                                    <img src="assets/layout/images/avatar_4.png" width="35" alt="avatar4" />
-                                    <span className="name">Claudio Ramos</span>
-                                    <span className="email">claudio@uniasselvi.com</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button className="p-link">
-                                    <img src="assets/layout/images/avatar_2.png" width="35" alt="avatar2" />
-                                    <span className="name">Pedro Zanchett</span>
-                                    <span className="email">pedro@uniasselvi.com</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button className="p-link">
-                                    <img src="assets/layout/images/avatar_3.png" width="35" alt="avatar3" />
-                                    <span className="name">Irani Silva</span>
-                                    <span className="email">irani@uniasselvi.com</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button className="p-link">
-                                    <img src="assets/layout/images/avatar_4.png" width="35" alt="avatar4" />
-                                    <span className="name">Gabriel Testoni</span>
-                                    <span className="email">gabriel@uniasselvi.com</span>
-                                </button>
-                            </li>
-                        </ul>
-                    </Panel>
-                </div>
                 {/* <div className="p-col-12 p-lg-6">
                     <div className="card">
                         <h1 style={{fontSize:'16px'}}>Recent Sales</h1>
@@ -320,72 +236,10 @@ export class Dashboard extends Component {
                     <div className="card">
                         <Chart type="line" data={this.state.lineData}/>
                     </div>
-    </div> */}
-                <div className="p-col-12 p-lg-8">
-                    <Panel header="Calendar" style={{ height: '100%' }}>
+    </div>*/}
+                <div className="p-col-12 p-lg-12">
+                    <Panel header="Calendario" style={{ height: '100%' }}>
                         <FullCalendar events={this.state.events} options={this.state.fullcalendarOptions}></FullCalendar>
-                    </Panel>
-                </div>
-
-                <div className="p-col-12 p-lg-4">
-                    <Panel header="Activity" style={{ height: '100%' }}>
-                        <div className="activity-header">
-                            <div className="p-grid">
-                                <div className="p-col-6">
-                                    <span style={{ fontWeight: 'bold' }}>Últimas atividades</span>
-                                    <p>Atualizadas há 1 minuto atrás</p>
-                                </div>
-                                <div className="p-col-6" style={{ textAlign: 'right' }}>
-                                    <Button icon="pi pi-refresh" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <ul className="activity-list">
-                            <li>
-                                <div className="count">Chatbot</div>
-                                <div className="p-grid">
-                                    <div className="p-col-10"><b>Mensagem enviada</b> para o Professor: <b>Pedro Zanchett</b></div>
-                                    <div className="p-col-2">95%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="count" style={{ backgroundColor: '#f9c851' }}>Atualização Cadastral</div>
-                                <div className="p-grid">
-                                    <div className="p-col-6"><b>Endereço atualizado:</b></div>
-                                    <div className="p-col-6">Rua Ricardo Persuhn, 212</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="count" style={{ backgroundColor: '#20d077' }}>Financeiro</div>
-                                <div className="p-grid">
-                                    <div className="p-col-6"><b>Boleto Gerado:</b></div>
-                                    <div className="p-col-6">Valor: R$ 980,00</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="count" style={{ backgroundColor: 'orange' }}>Ajuste de Disciplina</div>
-                                <div className="p-grid">
-                                    <div className="p-col-8"><b>Sistemas Distriuídos</b> - 8º semestre</div>
-                                    <div className="p-col-4"><b>Situação:</b> Aplicada</div>
-                                    <div className="p-col-8"><b>Programação para Web</b> - 5º semestre</div>
-                                    <div className="p-col-4"><b>Situação:</b> Removida</div>
-                                    <div className="p-col-8"><b>Contabilidade</b> - 1º semestre</div>
-                                    <div className="p-col-4"><b>Situação:</b> Aplicada</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="count" style={{ backgroundColor: '#007be5' }}>Segunda via de Boleto</div>
-                                <div className="p-grid">
-                                    <div className="p-col-4"><b>Código de Barras:</b></div>
-                                    <div className="p-col-8">123456 123456 1234 1234 1 12345678910</div>
-                                    <div className="p-col-4"><b>Valor:</b></div>
-                                    <div className="p-col-8">R$ 980,00</div>
-                                    <div className="p-col-4"><b>Data de Vencimento:</b></div>
-                                    <div className="p-col-8">10/11/2019</div>
-                                </div>
-                            </li>
-                        </ul>
                     </Panel>
                 </div>
             </div>
