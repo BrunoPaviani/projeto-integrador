@@ -19,10 +19,10 @@ export class Dashboard extends Component {
             city: null,
             selectedCar: null,
             lineData: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
                 datasets: [
                     {
-                        label: 'First Dataset',
+                        label: 'Primeiro Dataset',
                         data: [65, 59, 80, 81, 56, 55, 40],
                         fill: false,
                         borderColor: '#007be5'
@@ -55,65 +55,64 @@ export class Dashboard extends Component {
             events: [
                 {
                     "id": 1,
-                    "title": "All Day Event",
+                    "title": "Dia de evento",
                     "start": "2017-02-01"
                 },
                 {
                     "id": 2,
-                    "title": "Long Event",
-                    "start": "2017-02-07",
-                    "end": "2017-02-10"
+                    "title": "Prova de sistemas distribuidos",
+                    "start": "2017-02-07"
                 },
                 {
                     "id": 3,
-                    "title": "Repeating Event",
+                    "title": "Pagamento boleto",
                     "start": "2017-02-09T16:00:00"
                 },
                 {
                     "id": 4,
-                    "title": "Repeating Event",
+                    "title": "Mensagem enviada para o coordenador Nader",
                     "start": "2017-02-16T16:00:00"
                 },
                 {
                     "id": 5,
-                    "title": "Conference",
+                    "title": "Carnaval",
                     "start": "2017-02-11",
                     "end": "2017-02-13"
                 },
                 {
                     "id": 6,
-                    "title": "Meeting",
+                    "title": "Provas",
                     "start": "2017-02-12T10:30:00",
                     "end": "2017-02-12T12:30:00"
                 },
                 {
                     "id": 7,
-                    "title": "Lunch",
+                    "title": "Trabalho geografia",
                     "start": "2017-02-12T12:00:00"
                 },
                 {
                     "id": 8,
-                    "title": "Meeting",
+                    "title": "Loucuras",
                     "start": "2017-02-12T14:30:00"
                 },
                 {
                     "id": 9,
-                    "title": "Happy Hour",
+                    "title": "Prova Pedro",
                     "start": "2017-02-12T17:30:00"
                 },
                 {
                     "id": 10,
-                    "title": "Dinner",
+                    "title": "Ser feliz",
                     "start": "2017-02-12T20:00:00"
                 },
                 {
                     "id": 11,
-                    "title": "Birthday Party",
+                    "title": "Aniversário Pietra",
                     "start": "2017-02-13T07:00:00"
                 },
                 {
                     "id": 12,
-                    "title": "Click for Google",
+                    "title": "Google",
                     "url": "http://google.com/",
                     "start": "2017-02-28"
                 }
@@ -337,7 +336,7 @@ export class Dashboard extends Component {
                                     <p>Atualizadas há 1 minuto atrás</p>
                                 </div>
                                 <div className="p-col-6" style={{ textAlign: 'right' }}>
-                                    <Button label="Atualizar" icon="pi pi-refresh" />
+                                    <Button icon="pi pi-refresh" />
                                 </div>
                             </div>
                         </div>
@@ -365,7 +364,7 @@ export class Dashboard extends Component {
                                 </div>
                             </li>
                             <li>
-                                <div className="count" style={{ backgroundColor: '#f9c851' }}>Ajuste de Disciplina</div>
+                                <div className="count" style={{ backgroundColor: 'orange' }}>Ajuste de Disciplina</div>
                                 <div className="p-grid">
                                     <div className="p-col-8"><b>Sistemas Distriuídos</b> - 8º semestre</div>
                                     <div className="p-col-4"><b>Situação:</b> Aplicada</div>
