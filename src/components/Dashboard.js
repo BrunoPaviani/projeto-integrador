@@ -321,7 +321,7 @@ export class Dashboard extends Component {
                     <div className="card">
                         <Chart type="line" data={this.state.lineData}/>
                     </div>
-    </div>*/}
+    </div> */}
                 <div className="p-col-12 p-lg-8">
                     <Panel header="Calendar" style={{ height: '100%' }}>
                         <FullCalendar events={this.state.events} options={this.state.fullcalendarOptions}></FullCalendar>
@@ -333,56 +333,57 @@ export class Dashboard extends Component {
                         <div className="activity-header">
                             <div className="p-grid">
                                 <div className="p-col-6">
-                                    <span style={{ fontWeight: 'bold' }}>Last Activity</span>
-                                    <p>Updated 1 minute ago</p>
+                                    <span style={{ fontWeight: 'bold' }}>Últimas atividades</span>
+                                    <p>Atualizadas há 1 minuto atrás</p>
                                 </div>
                                 <div className="p-col-6" style={{ textAlign: 'right' }}>
-                                    <Button label="Refresh" icon="pi pi-refresh" />
+                                    <Button label="Atualizar" icon="pi pi-refresh" />
                                 </div>
                             </div>
                         </div>
 
                         <ul className="activity-list">
                             <li>
-                                <div className="count">$900</div>
+                                <div className="count">Chatbot</div>
                                 <div className="p-grid">
-                                    <div className="p-col-6">Income</div>
-                                    <div className="p-col-6">95%</div>
+                                    <div className="p-col-10"><b>Mensagem enviada</b> para o Professor: <b>Pedro Zanchett</b></div>
+                                    <div className="p-col-2">95%</div>
                                 </div>
                             </li>
                             <li>
-                                <div className="count" style={{ backgroundColor: '#f9c851' }}>$250</div>
+                                <div className="count" style={{ backgroundColor: '#f9c851' }}>Atualização Cadastral</div>
                                 <div className="p-grid">
-                                    <div className="p-col-6">Tax</div>
-                                    <div className="p-col-6">24%</div>
+                                    <div className="p-col-6"><b>Endereço atualizado:</b></div>
+                                    <div className="p-col-6">Rua Ricardo Persuhn, 212</div>
                                 </div>
                             </li>
                             <li>
-                                <div className="count" style={{ backgroundColor: '#20d077' }}>$125</div>
+                                <div className="count" style={{ backgroundColor: '#20d077' }}>Financeiro</div>
                                 <div className="p-grid">
-                                    <div className="p-col-6">Invoices</div>
-                                    <div className="p-col-6">55%</div>
+                                    <div className="p-col-6"><b>Boleto Gerado:</b></div>
+                                    <div className="p-col-6">Valor: R$ 980,00</div>
                                 </div>
                             </li>
                             <li>
-                                <div className="count" style={{ backgroundColor: '#f9c851' }}>$250</div>
+                                <div className="count" style={{ backgroundColor: '#f9c851' }}>Ajuste de Disciplina</div>
                                 <div className="p-grid">
-                                    <div className="p-col-6">Expenses</div>
-                                    <div className="p-col-6">15%</div>
+                                    <div className="p-col-8"><b>Sistemas Distriuídos</b> - 8º semestre</div>
+                                    <div className="p-col-4"><b>Situação:</b> Aplicada</div>
+                                    <div className="p-col-8"><b>Programação para Web</b> - 5º semestre</div>
+                                    <div className="p-col-4"><b>Situação:</b> Removida</div>
+                                    <div className="p-col-8"><b>Contabilidade</b> - 1º semestre</div>
+                                    <div className="p-col-4"><b>Situação:</b> Aplicada</div>
                                 </div>
                             </li>
                             <li>
-                                <div className="count" style={{ backgroundColor: '#007be5' }}>$350</div>
+                                <div className="count" style={{ backgroundColor: '#007be5' }}>Segunda via de Boleto</div>
                                 <div className="p-grid">
-                                    <div className="p-col-6">Bonus</div>
-                                    <div className="p-col-6">5%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="count" style={{ backgroundColor: '#ef6262' }}>$500</div>
-                                <div className="p-grid">
-                                    <div className="p-col-6">Revenue</div>
-                                    <div className="p-col-6">25%</div>
+                                    <div className="p-col-4"><b>Código de Barras:</b></div>
+                                    <div className="p-col-8">123456 123456 1234 1234 1 12345678910</div>
+                                    <div className="p-col-4"><b>Valor:</b></div>
+                                    <div className="p-col-8">R$ 980,00</div>
+                                    <div className="p-col-4"><b>Data de Vencimento:</b></div>
+                                    <div className="p-col-8">10/11/2019</div>
                                 </div>
                             </li>
                         </ul>
