@@ -1,0 +1,5 @@
+npm install
+npm install --save -dev react
+npm install primereact
+npm install bootstrap
+npm start

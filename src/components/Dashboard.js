@@ -20,10 +20,10 @@ export class Dashboard extends Component {
             city: null,
             selectedCar: null,
             lineData: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
                 datasets: [
                     {
-                        label: 'First Dataset',
+                        label: 'Primeiro Dataset',
                         data: [65, 59, 80, 81, 56, 55, 40],
                         fill: false,
                         borderColor: '#007be5'
