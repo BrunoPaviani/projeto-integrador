@@ -237,7 +237,7 @@ export class Dashboard extends Component {
                         <Chart type="line" data={this.state.lineData}/>
                     </div>
     </div>*/}
-                <div className="p-col-12 p-lg12">
+                <div className="p-col-12 p-lg-12">
                     <Panel header="Calendario" style={{ height: '100%' }}>
                         <FullCalendar events={this.state.events} options={this.state.fullcalendarOptions}></FullCalendar>
                     </Panel>
