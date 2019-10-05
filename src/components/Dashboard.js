@@ -9,6 +9,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import { InputTextarea } from 'primereact/inputtextarea';
+import { Messages } from 'primereact/messages';
 
 export class Dashboard extends Component {
 
@@ -44,79 +45,52 @@ export class Dashboard extends Component {
             ],
             fullcalendarOptions: {
                 plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
-                defaultDate: '2017-02-01',
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
+                    right: 'month,agendaWeek,agendaDay',
                 },
-                editable: true
+                editable: true,
+                locale: 'br-BR'
             },
             events: [
                 {
                     "id": 1,
-                    "title": "All Day Event",
-                    "start": "2017-02-01"
+                    "title": "Prova SOA",
+                    "start": "2019-10-10"
                 },
                 {
                     "id": 2,
-                    "title": "Long Event",
-                    "start": "2017-02-07",
-                    "end": "2017-02-10"
+                    "title": "Iniciar Projeto POO1",
+                    "start": "2019-10-01",
+                    "end": "2019-10-03"
                 },
                 {
-                    "id": 3,
-                    "title": "Repeating Event",
-                    "start": "2017-02-09T16:00:00"
+                    "id": 2,
+                    "title": "Entrega Trabalho BD1",
+                    "start": "2019-10-07",
+                    "end": "2017-10-10"
                 },
                 {
-                    "id": 4,
-                    "title": "Repeating Event",
-                    "start": "2017-02-16T16:00:00"
+                    "id": 2,
+                    "title": "Atualizar cadastro",
+                    "start": "2019-10-14",
                 },
                 {
-                    "id": 5,
-                    "title": "Conference",
-                    "start": "2017-02-11",
-                    "end": "2017-02-13"
-                },
-                {
-                    "id": 6,
-                    "title": "Meeting",
-                    "start": "2017-02-12T10:30:00",
-                    "end": "2017-02-12T12:30:00"
-                },
-                {
-                    "id": 7,
-                    "title": "Lunch",
-                    "start": "2017-02-12T12:00:00"
-                },
-                {
-                    "id": 8,
-                    "title": "Meeting",
-                    "start": "2017-02-12T14:30:00"
+                    "id": 2,
+                    "title": "Avaliação Institucional",
+                    "start": "2019-10-23",
                 },
                 {
                     "id": 9,
-                    "title": "Happy Hour",
-                    "start": "2017-02-12T17:30:00"
-                },
-                {
-                    "id": 10,
-                    "title": "Dinner",
-                    "start": "2017-02-12T20:00:00"
-                },
-                {
-                    "id": 11,
-                    "title": "Birthday Party",
-                    "start": "2017-02-13T07:00:00"
+                    "title": "Revisar TCC",
+                    "start": "2019-10-12T14:30:00"
                 },
                 {
                     "id": 12,
-                    "title": "Click for Google",
-                    "url": "http://google.com/",
-                    "start": "2017-02-28"
-                }
+                    "title": "Reunião Projeto",
+                    "start": "2019-10-29"
+                },
             ]
         };
 
@@ -156,8 +130,8 @@ export class Dashboard extends Component {
                 <div className="p-col-12 p-lg-4">
                     <div className="card summary">
                         <span className="title">Turma</span>
-                        <span className="detail">Turma</span>
-                        <span className="count visitors">INF018</span>
+                        <span className="detail">Sistemas de informação</span>
+                        <span className="count visitors">INF043</span>
                     </div>
                 </div>
                 <div className="p-col-12 p-lg-4">
@@ -170,7 +144,7 @@ export class Dashboard extends Component {
                 <div className="p-col-12 p-lg-4">
                     <div className="card summary">
                         <span className="title">Mesalidade</span>
-                        <span className="detail">Data de Vencimento: 10/12/2019</span>
+                        <span className="detail">Data de vencimento - 25/11/2019</span>
                         <span className="count revenue">R$830</span>
                     </div>
                 </div>
@@ -251,60 +225,6 @@ export class Dashboard extends Component {
                         </ul>
                     </Panel>
         </div>*/}
-                <div className="p-col-12 p-md-6 p-lg-6 p-fluid contact-form">
-                    <Panel header="Mensagem">
-                        <div className="p-grid">
-                            <div className="p-col-12">
-                                <Dropdown value={this.state.city} options={this.state.cities} placeholder="Selecione o contato" onChange={this.onCityChange} autoWidth={false} />
-                            </div>
-                            <div className="p-col-12">
-                                <InputText type="text" placeholder="Titulo da mensagem." />
-                            </div>
-                            <div className="p-col-12">
-                                <InputTextarea rows={4} cols={30} placeholder="Digite aqui." autoResize={true} />
-                            </div>
-                            <div className="p-col-12">
-                                
-                                <Button onClick={this.showSuccess} type="button" label="Enviar" icon="fa-send" />
-                            </div>
-                        </div>
-                    </Panel>
-                </div>
-
-                <div className="p-col-12 p-lg-6 contacts">
-                    <Panel header="Contatos">
-                        <ul>
-                            <li>
-                                <button className="p-link">
-                                    <img src="assets/layout/images/avatar_4.png" width="35" alt="avatar4" />
-                                    <span className="name">Claudio Ramos</span>
-                                    <span className="email">claudio@uniasselvi.com</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button className="p-link">
-                                    <img src="assets/layout/images/avatar_2.png" width="35" alt="avatar2" />
-                                    <span className="name">Pedro Zanchett</span>
-                                    <span className="email">pedro@uniasselvi.com</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button className="p-link">
-                                    <img src="assets/layout/images/avatar_3.png" width="35" alt="avatar3" />
-                                    <span className="name">Irani Silva</span>
-                                    <span className="email">irani@uniasselvi.com</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button className="p-link">
-                                    <img src="assets/layout/images/avatar_4.png" width="35" alt="avatar4" />
-                                    <span className="name">Gabriel Testoni</span>
-                                    <span className="email">gabriel@uniasselvi.com</span>
-                                </button>
-                            </li>
-                        </ul>
-                    </Panel>
-                </div>
                 {/* <div className="p-col-12 p-lg-6">
                     <div className="card">
                         <h1 style={{fontSize:'16px'}}>Recent Sales</h1>
@@ -322,70 +242,9 @@ export class Dashboard extends Component {
                         <Chart type="line" data={this.state.lineData}/>
                     </div>
     </div>*/}
-                <div className="p-col-12 p-lg-8">
-                    <Panel header="Calendar" style={{ height: '100%' }}>
+                <div className="p-col-12 p-lg12">
+                    <Panel header="Calendario" style={{ height: '100%' }}>
                         <FullCalendar events={this.state.events} options={this.state.fullcalendarOptions}></FullCalendar>
-                    </Panel>
-                </div>
-
-                <div className="p-col-12 p-lg-4">
-                    <Panel header="Activity" style={{ height: '100%' }}>
-                        <div className="activity-header">
-                            <div className="p-grid">
-                                <div className="p-col-6">
-                                    <span style={{ fontWeight: 'bold' }}>Last Activity</span>
-                                    <p>Updated 1 minute ago</p>
-                                </div>
-                                <div className="p-col-6" style={{ textAlign: 'right' }}>
-                                    <Button label="Refresh" icon="pi pi-refresh" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <ul className="activity-list">
-                            <li>
-                                <div className="count">$900</div>
-                                <div className="p-grid">
-                                    <div className="p-col-6">Income</div>
-                                    <div className="p-col-6">95%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="count" style={{ backgroundColor: '#f9c851' }}>$250</div>
-                                <div className="p-grid">
-                                    <div className="p-col-6">Tax</div>
-                                    <div className="p-col-6">24%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="count" style={{ backgroundColor: '#20d077' }}>$125</div>
-                                <div className="p-grid">
-                                    <div className="p-col-6">Invoices</div>
-                                    <div className="p-col-6">55%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="count" style={{ backgroundColor: '#f9c851' }}>$250</div>
-                                <div className="p-grid">
-                                    <div className="p-col-6">Expenses</div>
-                                    <div className="p-col-6">15%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="count" style={{ backgroundColor: '#007be5' }}>$350</div>
-                                <div className="p-grid">
-                                    <div className="p-col-6">Bonus</div>
-                                    <div className="p-col-6">5%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="count" style={{ backgroundColor: '#ef6262' }}>$500</div>
-                                <div className="p-grid">
-                                    <div className="p-col-6">Revenue</div>
-                                    <div className="p-col-6">25%</div>
-                                </div>
-                            </li>
-                        </ul>
                     </Panel>
                 </div>
             </div>

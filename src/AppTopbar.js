@@ -19,9 +19,9 @@ export class AppTopbar extends Component {
                     <span className="pi pi-bars"/>
                 </button>
                 <div className="layout-topbar-icons">
-                    <span className="layout-topbar-search">
-                        <InputText type="text" placeholder="Search" />
-                        <span className="layout-topbar-search-icon pi pi-search"/>
+                    <span className="layout-topbar-Pesquisa">
+                        <InputText type="text" placeholder="Pesquisa" />
+                        <span className="layout-topbar-Pesquisa-icon pi pi-Pesquisa"/>
                     </span>
                     <button className="p-link">
                         <span className="layout-topbar-item-text">Events</span>
