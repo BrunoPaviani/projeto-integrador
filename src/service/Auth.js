@@ -1,9 +1,3 @@
-export const TOKEN_KEY = "@uni-Token";
-export const isAuthenticated = () => localStorage.getItem(TOKEN_KEY) !== null;
-export const getToken = () => localStorage.getItem(TOKEN_KEY);
-export const login = token => {
-  localStorage.setItem(TOKEN_KEY, token);
-};
-export const logout = () => {
-  localStorage.removeItem(TOKEN_KEY);
-};
+let _isAuthenticated = false;
+export const isAuthenticated = () => _isAuthenticated;
+export const setAuthenticated = (_value) => _isAuthenticated = _value;

@@ -31,6 +31,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import { isAuthenticated } from "./service/Auth";
 import Login from './Login';
+import PrivateRoute from './PrivateRoute';
 
 class App extends Component {
 
@@ -102,7 +103,7 @@ class App extends Component {
 
     createMenu() {
         this.menu = [
-            {label: 'Dashboard', icon: 'pi pi-fw pi-home', command: () => {window.location = '#/'}},
+            {label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/dashboard'},
            /* {
                 label: 'Menu Modes', icon: 'pi pi-fw pi-cog',
                 items: [
@@ -194,57 +195,45 @@ class App extends Component {
 
         const sidebarClassName = classNames("layout-sidebar", {
             'layout-sidebar-light': true
-        });
-
-        const PrivateRoute = ({ component: Component, ...rest }) => (
-            <Route
-              {...rest}
-              render={props =>
-                isAuthenticated() ? (
-                  <Component {...props} />
-                ) : (
-                  <Redirect to={{ pathname: "/", state: { from: props.location } }} />
-                )
-              }
-            />
-          );
-          
+        });          
 
         return (
-            <div className={wrapperClass} onClick={this.onWrapperClick}>
-                <PrivateRoute path="/app" component={() => <h1>App</h1>} />
-                <AppTopbar onToggleMenu={this.onToggleMenu}/>
+            <div>
+            <Route path='/' exact component={() => <Login />} />
+             <div id="div-principal" className={wrapperClass} onClick={this.onWrapperClick}>
+                 <AppTopbar onToggleMenu={this.onToggleMenu} />
 
-                <div ref={(el) => this.sidebar = el} className={sidebarClassName} onClick={this.onSidebarClick}>
-                    <div className="layout-logo">
-                        <img alt="Logo" className="img-logo" src={logo}/>
-                    </div>
-                    <AppMenu model={this.menu} onMenuItemClick={this.onMenuItemClick} />
-                </div>
+                 <div ref={(el) => this.sidebar = el} className={sidebarClassName} onClick={this.onSidebarClick}>
+                     <div className="layout-logo">
+                         <img alt="Logo" className="img-logo" src={logo} />
+                     </div>
+                     <AppMenu model={this.menu} onMenuItemClick={this.onMenuItemClick} />
+                 </div>
 
-                <div className="layout-main">
-                    <Route path="/" exact component={Dashboard} />
-                    <Route path="/forms" component={FormsDemo} />
-                    <Route path="/sample" component={SampleDemo} />
-                    <Route path="/data" component={DataDemo} />
-                    <Route path="/panels" component={PanelsDemo} />
-                    <Route path="/overlays" component={OverlaysDemo} />
-                    <Route path="/menus" component={MenusDemo} />
-                    <Route path="/messages" component={MessagesDemo} />
-                    <Route path="/charts" component={ChartsDemo} />
-                    <Route path="/misc" component={MiscDemo} />
-                    <Route path="/empty" component={EmptyPage} />
-                    <Route path="/documentation" component={Documentation} />
-                    <Route path="/cadastro" component={Cadastro} />
-                    <Route path="/ajusteDisciplina" component={AjusteDisciplina} />
-                    <Route path="/boleto" component={SolicitaSegVia} />
-                    <Route path="/login" component={Login} />
-                </div>
+                 <div className="layout-main">
+                     <PrivateRoute path="/dashboard" component={Dashboard} />
+                     <PrivateRoute path="/forms" component={FormsDemo} />
+                     <PrivateRoute path="/sample" component={SampleDemo} />
+                     <PrivateRoute path="/data" component={DataDemo} />
+                     <PrivateRoute path="/panels" component={PanelsDemo} />
+                     <PrivateRoute path="/overlays" component={OverlaysDemo} />
+                     <PrivateRoute path="/menus" component={MenusDemo} />
+                     <PrivateRoute path="/messages" component={MessagesDemo} />
+                     <PrivateRoute path="/charts" component={ChartsDemo} />
+                     <PrivateRoute path="/misc" component={MiscDemo} />
+                     <PrivateRoute path="/empty" component={EmptyPage} />
+                     <PrivateRoute path="/documentation" component={Documentation} />
+                     <PrivateRoute path="/cadastro" component={Cadastro} />
+                     <PrivateRoute path="/ajusteDisciplina" component={AjusteDisciplina} />
+                     <PrivateRoute path="/boleto" component={SolicitaSegVia} />
+                     <PrivateRoute path="/login" component={Login} />
+                 </div>
 
-                <AppFooter />
+                 <AppFooter />
 
-                <div className="layout-mask"></div>
-            </div>
+                 <div className="layout-mask"></div>
+             </div>
+         </div>
         );
     }
 }
