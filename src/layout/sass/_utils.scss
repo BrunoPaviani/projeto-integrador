@@ -62,3 +62,10 @@ h2 {
 .tela-inteira {
   width: 100%;
 }
+
+.tela-login {
+  padding: 38%;
+  padding-top: 5%;
+  @include linear-gradient-left($topbarLeftBgColor,$topbarRightBgColor);
+  @include shadow(0 0 6px 0 rgba(0, 0, 0, 0.16));
+}

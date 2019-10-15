@@ -5,6 +5,18 @@ import { FullCalendar } from 'primereact/fullcalendar';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
+import {
+    getMateriasPendentes,
+    getMateriasAprovadas,
+    getMateriasReprovadas,
+    getMateriasCursadas,
+    getMensalidadeVenc,
+    getMensalidadeValor,
+    getPeriodo,
+    getTurmaCodigo,
+    getTurmaCurso,
+    getEventosUsuario
+} from '../common/DadosUsuario';
 
 export class Dashboard extends Component {
 
@@ -47,46 +59,7 @@ export class Dashboard extends Component {
                 },
                 editable: true,
                 locale: 'br-BR'
-            },
-            events: [
-                {
-                    "id": 1,
-                    "title": "Prova SOA",
-                    "start": "2019-10-10"
-                },
-                {
-                    "id": 2,
-                    "title": "Iniciar Projeto POO1",
-                    "start": "2019-10-01",
-                    "end": "2019-10-03"
-                },
-                {
-                    "id": 2,
-                    "title": "Entrega Trabalho BD1",
-                    "start": "2019-10-07",
-                    "end": "2017-10-10"
-                },
-                {
-                    "id": 2,
-                    "title": "Atualizar cadastro",
-                    "start": "2019-10-14",
-                },
-                {
-                    "id": 2,
-                    "title": "Avaliação Institucional",
-                    "start": "2019-10-23",
-                },
-                {
-                    "id": 9,
-                    "title": "Revisar TCC",
-                    "start": "2019-10-12T14:30:00"
-                },
-                {
-                    "id": 12,
-                    "title": "Reunião Projeto",
-                    "start": "2019-10-29"
-                },
-            ]
+            }
         };
 
         this.onTaskChange = this.onTaskChange.bind(this);
@@ -125,22 +98,22 @@ export class Dashboard extends Component {
                 <div className="p-col-12 p-lg-4">
                     <div className="card summary">
                         <span className="title">Turma</span>
-                        <span className="detail">Sistemas de informação</span>
-                        <span className="count visitors">INF043</span>
+                        <span className="detail">{getTurmaCurso()}</span>
+                        <span className="count visitors">{getTurmaCodigo()}</span>
                     </div>
                 </div>
                 <div className="p-col-12 p-lg-4">
                     <div className="card summary">
                         <span className="title">Período</span>
                         <span className="detail">Semestre atual</span>
-                        <span className="count purchases">8</span>
+                        <span className="count purchases">{getPeriodo()}</span>
                     </div>
                 </div>
                 <div className="p-col-12 p-lg-4">
                     <div className="card summary">
                         <span className="title">Mesalidade</span>
-                        <span className="detail">Data de vencimento - 25/11/2019</span>
-                        <span className="count revenue">R$830</span>
+                        <span className="detail">Data de vencimento - {getMensalidadeVenc()}</span>
+                        <span className="count revenue">{getMensalidadeValor()}</span>
                     </div>
                 </div>
 
@@ -150,7 +123,7 @@ export class Dashboard extends Component {
                         <div className="highlight-details ">
                             <i className="pi pi-filter" />
                             <span>Matérias cursadas</span>
-                            <span className="count">36</span>
+                            <span className="count">{getMateriasCursadas()}</span>
                         </div>
                     </div>
                 </div>
@@ -160,7 +133,7 @@ export class Dashboard extends Component {
                         <div className="highlight-details ">
                             <i className="pi pi-times" />
                             <span>Matérias reprovadas</span>
-                            <span className="count">5</span>
+                            <span className="count">{getMateriasReprovadas()}</span>
                         </div>
                     </div>
                 </div>
@@ -170,7 +143,7 @@ export class Dashboard extends Component {
                         <div className="highlight-details ">
                             <i className="pi pi-check" />
                             <span>Matérias aprovadas</span>
-                            <span className="count">31</span>
+                            <span className="count">{getMateriasAprovadas()}</span>
                         </div>
                     </div>
                 </div>
@@ -180,7 +153,7 @@ export class Dashboard extends Component {
                         <div className="highlight-details ">
                             <i className="pi pi-question-circle" />
                             <span>Matérias pendentes</span>
-                            <span className="count">6</span>
+                            <span className="count">{getMateriasPendentes()}</span>
                         </div>
                     </div>
                 </div>
@@ -239,7 +212,7 @@ export class Dashboard extends Component {
     </div>*/}
                 <div className="p-col-12 p-lg-12">
                     <Panel header="Calendario" style={{ height: '100%' }}>
-                        <FullCalendar events={this.state.events} options={this.state.fullcalendarOptions}></FullCalendar>
+                        <FullCalendar events={getEventosUsuario()} options={this.state.fullcalendarOptions}></FullCalendar>
                     </Panel>
                 </div>
             </div>

@@ -1,0 +1,66 @@
+{
+  "claudio": {
+    "senha": "123",
+    "nome": "Claudio da Silva Ramos",
+    "dt_nascimento": "16/10/1997",
+    "endereco": "Rua 30 de março 89",
+    "turma": {
+      "codigo": "INF0043",
+      "curso": "Sistemas de informação"
+    },
+    "periodo": "8",
+    "mensalidade": {
+      "valor": "R$830",
+      "vencimento": "25/11/2019"
+    },
+    "materias": {
+      "cursadas": "36",
+      "reprovadas": "5",
+      "aprovadas": "31",
+      "pendentes": "6"
+    },
+    "eventos": [
+      {
+          "id": 1,
+          "title": "Prova SOA",
+          "start": "2019-10-10"
+      },
+      {
+          "id": 2,
+          "title": "Iniciar Projeto POO1",
+          "start": "2019-10-01",
+          "end": "2019-10-03"
+      },
+      {
+          "id": 3,
+          "title": "Entrega Trabalho BD1",
+          "start": "2019-10-07",
+          "end": "2017-10-10"
+      },
+      {
+          "id": 4,
+          "title": "Atualizar cadastro",
+          "start": "2019-10-14"
+      },
+      {
+          "id": 5,
+          "title": "Avaliação Institucional",
+          "start": "2019-10-23"
+      },
+      {
+          "id": 9,
+          "title": "Revisar TCC",
+          "start": "2019-10-12T14:30:00"
+      },
+      {
+          "id": 12,
+          "title": "Reunião Projeto",
+          "start": "2019-10-29"
+      }
+  ]
+  },
+  "lucas": {},
+  "gabriel": {},
+  "bruno": {},
+  "rafael": {}
+}
